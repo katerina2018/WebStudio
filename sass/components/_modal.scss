@@ -1,0 +1,241 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity $time-animation $timing-function;
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(100%);
+    padding: 30px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    background: $white-color;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform $time-animation $timing-function;
+    @media screen and (max-width: $tablet) {
+        width: 360px;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    @media screen and (max-width: $tablet) and (orientation: landscape) {
+        // --
+        width: 360px;
+        // --
+        overflow-y: scroll;
+    }
+    @media screen and (min-width: $tablet) {
+        top: 50%;
+        height: auto;
+        // --
+        width: auto;
+        min-width: 450px;
+        // --
+        transform: translate(-50%, -50%) scale(100%);
+    }
+    @media screen and (min-width: $desktop) {
+        // --
+        width: auto;
+        min-width: 528px;
+        // --
+        padding: 40px;
+    }
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(50%);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: $black-color;
+}
+
+.close__icon {
+    width: 18px;
+    height: 18px;
+    transition: fill $time-animation $timing-function;
+    .close:hover & {
+        fill: $accent-color;
+    }
+}
+
+.modal__title {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $title-text-color;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.modal-form__label-description {
+    margin-bottom: 4px;
+}
+
+.modal-form__input-field {
+    position: relative;
+}
+
+.modal-form__input {
+    width: 100%;
+    padding: 11px 12px 11px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color $time-animation $timing-function;
+    .modal-form__label:focus-within & {
+        border-color: $accent-color;
+        outline-color: $accent-color;
+    }
+}
+
+.modal-form__icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    transition: fill $time-animation $timing-function;
+    .modal-form__label:focus-within & {
+        fill: $accent-color;
+    }
+}
+
+.modal-form__comment {
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 16px;
+    transition: border-color $time-animation $timing-function;
+    .modal-form__label:focus-within & {
+        border-color: $accent-color;
+        outline-color: $accent-color;
+    }
+}
+
+.modal-form__offer-label {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $parag-color;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 28px;
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        padding-left: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+.modal-form__offer-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.modal-form__offer-select {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid $link-color;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: background-color $time-animation $timing-function, border-color $time-animation $timing-function;
+    @media screen and (min-width: $tablet) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @media screen and (min-width: $desktop) {
+        left: 12px;
+    }
+    .modal-form__offer-input:checked~& {
+        background-color: $accent-color;
+        border-color: $accent-color;
+    }
+}
+
+.modal-form__offer-icon {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 16px;
+    height: 15px;
+    opacity: 0;
+    fill: $white-color;
+    transition: opacity $time-animation $timing-function;
+    @media screen and (min-width: $tablet) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @media screen and (min-width: $desktop) {
+        left: 12px;
+    }
+    .modal-form__offer-input:checked~& {
+        opacity: 1;
+    }
+}
+
+.modal-form__offer-label a {
+    display: inline-block;
+    text-decoration: underline;
+    color: $accent-color;
+    &:hover,
+    &:focus {
+        color: $black-color;
+    }
+}
+
+.modal-form__button {
+    @extend %btn-primary;
+    margin: 0 auto;
+    &:hover,
+    &:focus {
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+}

@@ -1,0 +1,39 @@
+.logo {
+    font-family: 'Raleway', sans-serif;
+    color: $black-color;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    transition: color $time-animation $timing-function;
+    @media screen and (min-width: $desktop) {
+        letter-spacing: 0.03em;
+        font-size: 26px;
+        line-height: 1.19;
+    }
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.logo__accent {
+    color: $accent-color;
+    transition: color $time-animation $timing-function;
+    .logo:hover &,
+    .logo:focus &--accen {
+        color: $black-color;
+    }
+}
+
+.logo--light-theme {
+    color: $white-color;
+    margin-bottom: 20px;
+}
+
+.logo__accent--light-theme {
+    .logo--light-theme:hover &,
+    .logo--light-theme:focus & {
+        color: $white-color;
+    }
+}

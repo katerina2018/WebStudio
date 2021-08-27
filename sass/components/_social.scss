@@ -1,0 +1,37 @@
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social__link {
+    width: 44px;
+    height: 44px;
+    @include centeredFlex();
+    border-radius: 50%;
+    transition: background-color $time-animation $timing-function;
+    &--studio {
+        background-color: rgba(255, 255, 255, 0.1)
+    }
+    &:hover,
+    &:focus {
+        background-color: $accent-color;
+    }
+}
+
+.social__icon {
+    width: 20px;
+    height: 20px;
+    fill: #afb1b8;
+    transition: fill $time-animation $timing-function;
+    &--studio {
+        fill: $white-color;
+    }
+    .social__link:hover>&,
+    .social__link:focus>& {
+        fill: $white-color;
+    }
+}

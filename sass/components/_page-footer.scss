@@ -1,0 +1,128 @@
+.footer {
+    padding: 60px 0;
+    background-color: $dark-bg-color;
+}
+
+.footer__content {
+    @media screen and (max-width: $desktop) {
+        text-align: center;
+    }
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+}
+
+.footer__location {
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+    }
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 60px;
+    }
+    @media screen and (min-width: $desktop) {
+        flex-basis: 50%;
+    }
+}
+
+.footer__address {
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 60px;
+    }
+    @media screen and (min-width: $tablet) {
+        flex-basis: 50%;
+    }
+}
+
+.studio-social {
+    @media screen and (min-width: $tablet) {
+        flex-basis: 50%;
+    }
+}
+
+.studio-social .social {
+    @media screen and (min-width: $desktop) {
+        justify-content: left;
+    }
+}
+
+.connection {
+    font-style: normal;
+}
+
+.connection__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.connection__text {
+    color: $white-color;
+}
+
+.connection__link {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color $time-animation $timing-function;
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.form-newsletter__wrapper {
+    @media screen and (min-width: $desktop) {
+        flex-basis: 50%;
+    }
+}
+
+.form-newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        flex-direction: column;
+    }
+    @media screen and (min-width: $desktop) {
+        flex-wrap: nowrap;
+    }
+}
+
+.form-newsletter__input {
+    width: 100%;
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        width: calc(100% /6 * 4);
+    }
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-right: 12px;
+    }
+    padding: 15px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-newsletter__button {
+    @extend %btn-primary;
+    @include centeredFlex();
+    &:hover,
+    &:focus {
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.form-newsletter__icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}

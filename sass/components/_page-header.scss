@@ -1,0 +1,7 @@
+.page-header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.top-line {
+    @include centeredFlex();
+}
