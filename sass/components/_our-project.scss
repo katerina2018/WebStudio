@@ -44,8 +44,7 @@
         margin-left: -30px;
         margin-top: -30px;
     }
-    @media screen and (min-width: $tablet) and (max-width: $desktop),
-    (orientation: landscape) {
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
         display: flex;
         flex-wrap: wrap;
         margin-left: -30px;
@@ -57,8 +56,7 @@
     @media screen and (max-width: $tablet) {
         margin-bottom: 30px;
     }
-    @media screen and (min-width: $tablet) and (max-width: $desktop),
-    (orientation: landscape) {
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
         width: calc((100% - 2*30px)/2);
         margin-left: 30px;
         margin-top: 30px;
@@ -101,7 +99,7 @@
     letter-spacing: 0.03em;
     color: $white-color;
     background: rgba(33, 150, 243, 0.9);
-    transition: transform $time-animation $timing-function;
+    transition: transform 500ms $timing-function;
     .filter-cards__link:hover &,
     .filter-cards__link:focus & {
         transform: translateY(-100%);

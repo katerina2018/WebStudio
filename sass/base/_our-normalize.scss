@@ -35,15 +35,17 @@ ul {
 .container {
     margin: 0 auto;
     padding: 0 15px;
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $mobile) {
         max-width: $mobile;
     }
-    @media screen and (min-width: $tablet) and (max-width: $desktop),
-    (orientation: landscape) {
-        max-width: $tablet;
+    @media screen and (min-width: $mobile) and (max-width: $tablet) {
+        width: $mobile;
+    }
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        width: $tablet;
     }
     @media screen and (min-width: $desktop) {
-        max-width: $desktop;
+        width: $desktop;
     }
 }
 

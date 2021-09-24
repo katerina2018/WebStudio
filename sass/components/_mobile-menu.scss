@@ -44,6 +44,7 @@
         z-index: 999;
         transform: translateX(-100%);
         transition: transform 250ms ease-in-out;
+        overflow: hidden;
         @media screen and (min-width: $tablet) {
             display: none;
         }
@@ -69,7 +70,7 @@
     
     .mobile-nav__link {
         font-weight: 500;
-        font-size: 40px;
+        font-size: 26px;
         line-height: 1.175;
         letter-spacing: 0.02em;
         color: $link-color;
@@ -78,8 +79,8 @@
         &:focus {
             color: $accent-color;
         }
-        @media screen and (max-width: 437px) {
-            font-size: 30px;
+        @media screen and (min-width: $tablet) {
+            font-size: 40px;
         }
     }
     
@@ -94,7 +95,7 @@
     
     .mobile-auth-nav__link {
         font-weight: 500;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1.17;
         letter-spacing: 0.02em;
         color: $auth-nav-color;
